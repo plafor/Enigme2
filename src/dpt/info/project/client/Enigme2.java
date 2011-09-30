@@ -89,7 +89,7 @@ public class Enigme2 implements EntryPoint {
 		//tabPanel.add(enigmeEcran.onInitialize(), "Mes enigmes");
 		tabPanel.add(new OngletEnigmeLazy(),"Mes enigmes");
 		//tabPanel.add(new HTML("<p>Ici viendront les enigmes.</p>"), "Mes enigmes");
-		tabPanel.add(new HTML("<p>Ici viendra le profil.</p>"), "Mon profil");
+		tabPanel.add(new OngletProfil(), "Mon profil");
 		
 		//tabPanel.add(new HTML("<p>il.</p>"), "A propos");
 		//tabPanel.animate(1000);
