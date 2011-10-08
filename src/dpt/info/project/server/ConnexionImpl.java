@@ -10,6 +10,9 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 
 public class ConnexionImpl extends RemoteServiceServlet implements Connexion {
+	
+	private String mess;
+	private int cpt = 0;
 
 	@Override
 	public UserInfo isIdentifie(String id, String mdp) {
@@ -34,5 +37,25 @@ public class ConnexionImpl extends RemoteServiceServlet implements Connexion {
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	@Override
+	public void testEnvoie(String message) {
+		mess = message;
+		cpt++;
+		//mess.notifyAll();
+	}
+
+	@Override
+	public String getNewMessage(int num) {
+		while (cpt != num)
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+		return mess;
 	}
 }

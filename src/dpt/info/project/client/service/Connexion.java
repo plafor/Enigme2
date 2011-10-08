@@ -22,4 +22,8 @@ public interface Connexion extends RemoteService {
 	}
 
 	UserInfo isIdentifie(String id, String mdp);
+	
+	void testEnvoie(String message);
+	
+	String getNewMessage(int num);
 }
